@@ -26,7 +26,7 @@ Example row:
 
 Audio formats: wav/mp3/flac 
 
-## How it works (high level)
+## How it works
 
 - Lyrics: `TfidfVectorizer` produces sparse vectors.
 - Audio: MFCC features are extracted using `librosa`, aggregated (mean/std).
