@@ -1,0 +1,24 @@
+data:
+  tracks_csv: "data/raw/tracks.csv"
+  processed_dir: "data/processed"
+
+features:
+  lyrics:
+    # Faster TF-IDF: fewer features + unigrams only
+    max_features: 20000
+    ngram_range: [1, 1]
+    min_df: 3
+  audio:
+    sample_rate: 22050
+    n_mfcc: 20
+
+fusion:
+  lyrics_weight: 1.0
+  audio_weight: 0.0
+
+artifacts:
+  dir: "models"
+  index_path: "models/index.joblib"
+  metadata_path: "models/metadata.csv"
+  tfidf_path: "models/tfidf.joblib"
+  audio_scaler_path: "models/audio_scaler.joblib"
